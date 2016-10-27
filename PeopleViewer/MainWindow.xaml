@@ -1,0 +1,16 @@
+﻿<Window x:Class="PeopleViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PeopleViewer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="389.222" Width="609.897">
+    <Grid>
+        <Button x:Name="ConcreteFetchButton" Content="ConcreteFetch" HorizontalAlignment="Left" Margin="21,24,0,0" VerticalAlignment="Top" Width="148" Height="52" Click="ConcreteFetchButton_Click"/>
+        <Button x:Name="InterfaceFetchButton" Content="Interface Fetch" HorizontalAlignment="Left" Margin="21,89,0,0" VerticalAlignment="Top" Width="148" Height="52" Click="InterfaceFetchButton_Click"/>
+        <Button x:Name="Clear" Content="Clear" HorizontalAlignment="Left" Margin="21,281,0,0" VerticalAlignment="Top" Width="148" Height="52" Click="Clear_Click"/>
+        <ListBox x:Name="PersonListBox" HorizontalAlignment="Left" Height="309" Margin="194,24,0,0" VerticalAlignment="Top" Width="398"/>
+
+    </Grid>
+</Window>
