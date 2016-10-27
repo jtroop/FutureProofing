@@ -49,13 +49,21 @@ namespace PeopleViewer
             // it could be a list, array, collection, etc.
             // And we shouldn't care because since whatever this is implements IENumerable
             // this means we can iterate over it.
-            // 
-            IEnumerable people;
+            // By adding the <Person> to IEnumberable we are strongly typing this 
+            // so we can now all of the public properties and methods of the Person
+            // class
+            // Normally we wouldn't do all this foreach loop stuff, instead we would bind the PersonListBox
+            // to a datasource, in this case peopleRepo.GetPeople();
+            IEnumerable<Person> people;
+            
             people = peopleRepo.GetPeople();
-            foreach (var person in people)
-            {
-                PersonListBox.Items.Add($"{person.ToString()} ");
-            }
+            PersonListBox.ItemsSource = people;
+            
+            
+            //foreach (var person in people)
+            //{
+            //    PersonListBox.Items.Add($"{person.FirstName} {person.LastName} {person.Rating} {person.StartDate}");
+            //}
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
@@ -65,7 +73,8 @@ namespace PeopleViewer
 
         private void ClearListBox()
         {
-            PersonListBox.Items.Clear();
+            //PersonListBox.Items.Clear();
+            PersonListBox.ItemsSource = null;
         }
     }
 }
